@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
@@ -11,24 +12,15 @@ var versionCmd = &cobra.Command{
 	Short: "Print gokeyring version",
 	Args:  cobra.NoArgs,
 	Run: func(cmd *cobra.Command, args []string) {
-		if Version == "" {
-			Version = "dev"
+		// Get git commit hash
+		commit, _ := exec.Command("git", "rev-parse", "--short", "HEAD").Output()
+		if len(commit) > 0 {
+			fmt.Printf("gokeyring version %s\n", string(commit))
+		} else {
+			fmt.Println("gokeyring version dev (not built from git)")
 		}
-		if Commit == "" {
-			Commit = "none"
-		}
-		if Date == "" {
-			Date = "unknown"
-		}
-		fmt.Printf("gokeyring version %s (%s) built on %s\n", Version, Commit, Date)
 	},
 }
-
-var (
-	Version string
-	Commit  string
-	Date    string
-)
 
 func init() {
 	rootCmd.AddCommand(versionCmd)
