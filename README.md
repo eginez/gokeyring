@@ -114,6 +114,24 @@ gokeyring status
 | `GOKEYRING_BACKEND` | Force a specific backend |
 | `GOKEYRING_PASSWORD` | Password for non-interactive mode (file backend) |
 
+## opencode Integration
+
+gokeyring includes an opencode skill for easy password management in your AI workflows.
+
+### Install the skill
+
+Place the skill in the project root's `.opencode/skills/gokeyring/` directory, or globally in `~/.config/opencode/skills/gokeyring/`.
+
+### Usage
+
+Once installed, opencode will auto-discover the skill and you can:
+
+- Ask opencode to store secrets securely
+- Retrieve stored passwords
+- Manage your keyring through natural language
+
+See the [skill documentation](./.opencode/skills/gokeyring/SKILL.md) for detailed usage examples.
+
 ## Testing
 
 ```bash
