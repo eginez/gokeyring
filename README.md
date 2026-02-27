@@ -39,6 +39,7 @@ gokeyring [command]
 | `list` | List all keys in the keyring |
 | `status` | Show keyring configuration |
 | `unlock` | Unlock macOS keychain (macOS only) |
+| `version` | Print gokeyring version |
 
 ### Global Flags
 
