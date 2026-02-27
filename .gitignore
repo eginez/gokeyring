@@ -1,0 +1,33 @@
+# Go build output
+gokeyring
+*.go
+
+# Go modules
+go.mod
+go.sum
+
+# Binary
+gokeyring
+
+# Test coverage
+*.Out
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Config files (user-specific)
+.config/keyring/
+
+# Environment files
+.env
+.env.local
